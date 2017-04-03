@@ -13,6 +13,7 @@ if __name__ == "__main__":
     with open(args.input, 'r') as f:
         for line in f:
             subString = re.search('\[.*\]', line).group(0)
+            subString = subString[1:len(subString) - 1]
             splits = subString.split('/')
             days = int(splits[0][1:])
             ss = splits[2].split(':')
