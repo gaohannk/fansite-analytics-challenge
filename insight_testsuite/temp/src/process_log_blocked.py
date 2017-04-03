@@ -42,7 +42,7 @@ if __name__ == "__main__":
                 if siteDict[site][0] + 300 >= time:
                     resList.append(line)
                     continue
-            # Not blocked status
+            # Not blocked status or pass block window
             # Failed login
             if code == "401":
                 # 20 Seconds already Pass

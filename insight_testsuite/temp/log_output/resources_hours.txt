@@ -1,7 +1,0 @@
-/login,01/Jul/1995:00:00:01 -0400
-/login,01/Jul/1995:00:00:09 -0400
-/login,01/Jul/1995:00:00:12 -0400
-/shuttle/countdown/liftoff.html,01/Jul/1995:00:00:11 -0400
-/shuttle/countdown/liftoff.html,01/Jul/1995:00:00:15 -0400
-/shuttle/countdown/,01/Jul/1995:00:00:06 -0400
-/shuttle/countdown/,01/Jul/1995:00:00:14 -0400
