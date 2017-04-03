@@ -28,6 +28,11 @@ List the top 10 busiest (or most frequently visited) 60-minute periods
 ### Feature 4: 
 Detect patterns of three failed login attempts from the same IP address over 20 seconds so that all further attempts to the site can be blocked for 5 minutes. Log those possible security breaches.
 
+### Feature 5:
+List the top 10 congested (or most bandwidth consumed) 60-minute periods 
+
+### Feature 6:
+List the top 10 busiest 60-miutes periods for each top 10 resources accquired in feature 3.
 
 ### Other considerations and optional features
 It's critical that these features don't take too long to run. For example, if it took too long to detect three failed login attempts, further traffic from the same IP address couldn’t be blocked immediately, and that would present a security breach.
@@ -106,6 +111,34 @@ The following illustration may help you understand how this feature might work, 
 
 
 Note that this feature should not impact the other features in this challenge. For instance, any requests that end up in the `blocked.txt` file should be counted toward the most active IP host calculation, bandwidth consumption and busiest 60-minute period.
+
+### Feature 5
+List in descending order the site’s 10 congested (i.e. most bandwidth consumed) 60-minute period.
+
+Write to a file named `congested.txt`, the start of each 60-minute window followed by the number of times the site was accessed during that time period. The file should contain at most 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the congested 60-minute window shown first. 
+
+e.g., `congested.txt`:
+
+    01/Jul/1995:00:00:01 -0400,100
+    02/Jul/1995:13:00:00 -0400,22
+    05/Jul/1995:09:05:02 -0400,10
+    01/Jul/1995:12:30:05 -0400,8
+
+### Feature 6
+List the top 3 busiest 60-miutes periods for each top 10 resources accquired in feature 3
+
+This task is a combination of ferture 2 and feature 3. For each site accquired feature 3 find the top 3 busiest 60-miutes periods. Write to a file named `resources_hours.txt`.
+Each line is start with host/ip and followed the 60-minute window.
+
+e.g., `resources_hours.txt`:
+
+    /images/USA-logosmall.gif,03/Jul/1995:00:23:11 -0400
+    /images/USA-logosmall.gif,02/Jul/1995:13:22:05 -0400
+    /images/USA-logosmall.gif,05/Jul/1995:09:05:02 -0400
+    /shuttle/resources/orbiters/discovery.html,21/Jul/1995:05:02:34 -0400
+    /shuttle/resources/orbiters/discovery.html,12/Jul/1995:08:23:11 -0400
+    /shuttle/resources/orbiters/discovery.html,03/Jul/1995:02:03:10 -0400
+    ...
 
 ### Additional Features
 
