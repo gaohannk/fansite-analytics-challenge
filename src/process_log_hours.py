@@ -11,7 +11,7 @@ if __name__ == "__main__":
     parser.add_argument('--input', default=None, help='Input file path containing log')
     parser.add_argument('--output', default=None, help='Output file path to save top 10 busiest 60-minute period.')
     args = parser.parse_args()
-    # [(subString, time)] where subString is time string in [] and time is converted second format
+    # [dt] where dt is datetime object contain time
     timeList = []
     print("Reading data for input file: ", args.input)
     with open(args.input, 'r') as f:
@@ -27,9 +27,8 @@ if __name__ == "__main__":
             minutes = int(ss[2])
             seconds = int(ss[3][0:2])
             dt = datetime.datetime(year, month, days, hours, minutes, seconds)
-            # time = (days - 1) * 24 * 3600 + hours * 3600 + minutes * 60 + seconds
             timeList.append(dt)
-    # {subString:count} where substring is time string in [] and count is the visit times
+    # {sec:count} where sec is time with unix timestamp format and count is the visit times
     countDict = {}
     first = util.datetime_to_timestamp(timeList[0])
     last = util.datetime_to_timestamp(timeList[len(timeList) - 1])

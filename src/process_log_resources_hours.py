@@ -41,7 +41,6 @@ if __name__ == "__main__":
             minutes = int(ss[2])
             seconds = int(ss[3][0:2])
             dt = datetime.datetime(year, month, days, hours, minutes, seconds)
-            # time = (days - 1) * 24 * 3600 + hours * 3600 + minutes * 60 + seconds
             timeDict[resource].append(dt)
     for resource, list in timeDict.items():
         countDict = {}
